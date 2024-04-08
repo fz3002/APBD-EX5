@@ -2,7 +2,7 @@ using Animals.Interfaces;
 
 namespace Animals.Data;
 
-class VisitsRepository : IVisitsRepository
+public class VisitsRepository : IVisitsRepository
 {
     
 }

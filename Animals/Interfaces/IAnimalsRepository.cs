@@ -1,6 +1,6 @@
 namespace Animals.Interfaces;
 
-interface IAnimalsRepository
+public interface IAnimalsRepository
 {
-    
+    object? GetAnimals();
 }

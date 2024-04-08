@@ -2,7 +2,10 @@ namespace Animals.Data;
 
 using Animals.Interfaces;
 
-class AnimalsRepository : IAnimalsRepository
+public class AnimalsRepository : IAnimalsRepository
 {
-    
+    public object? GetAnimals()
+    {
+        throw new NotImplementedException();
+    }
 }

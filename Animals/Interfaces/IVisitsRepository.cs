@@ -1,6 +1,6 @@
 namespace Animals.Interfaces;
 
-interface IVisitsRepository
+public interface IVisitsRepository
 {
     
 }
