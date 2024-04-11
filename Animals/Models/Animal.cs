@@ -1,3 +1,5 @@
+using Animals.Enums;
+
 namespace Animals.Models;
 
 public class Animal
@@ -6,9 +8,9 @@ public class Animal
 
     public required string Name { get; set; }
 
-    public required string Category { get; set; }
+    public required Categories Category { get; set; }
 
-    public required string Mass { get; set; }
+    public required float Mass { get; set; }
     
     public required string Color_of_fur { get; set; }
 }

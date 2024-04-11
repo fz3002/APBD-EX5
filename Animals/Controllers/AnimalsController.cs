@@ -9,6 +9,7 @@ namespace Animals.Controllers;
 public class AnimalsController : ControllerBase
 {
     private static List<Animal> _animalsRepositoryService = AnimalsRepository.GetAll();
+    private static List<Visit> _visitsRepositoryService = VisitsRepository.GetAll();
 
     [HttpGet]
     public IActionResult GetAnimals()
@@ -53,11 +54,16 @@ public class AnimalsController : ControllerBase
     public IActionResult DeleteAnimal(int id)
     {
         var animalToEdit = _animalsRepositoryService.FirstOrDefault(a => a.Id == id);
+        var visitsToDelete = _visitsRepositoryService.FirstOrDefault(v => v.IdAnimal == id);
         if(animalToEdit == null)
         {
             return NoContent();
         }
         _animalsRepositoryService.Remove(animalToEdit);
+        if(visitsToDelete != null)
+        {
+            _visitsRepositoryService.RemoveAll(v => v.IdAnimal == id);
+        }
 
         return NoContent();
 
