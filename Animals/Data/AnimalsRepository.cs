@@ -1,11 +1,14 @@
 namespace Animals.Data;
 
-using Animals.Interfaces;
+using System.Collections.Generic;
+using Animals.Models;
 
-public class AnimalsRepository : IAnimalsRepository
+public static class AnimalsRepository
 {
-    public object? GetAnimals()
+
+    private static List<Animal> _animals = new List<Animal>();
+    public static List<Animal> GetAll()
     {
-        throw new NotImplementedException();
+        return _animals;
     }
 }
